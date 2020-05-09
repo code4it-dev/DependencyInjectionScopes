@@ -22,36 +22,5 @@ namespace DependencyInjectionScopes.Services
         }
     }
 
-    public interface IItalianGuidMessage
-    {
-        string GetGuidMessage();
-    }
 
-    public interface IEnglishGuidMessage
-    {
-        string GetGuidMessage();
-    }
-
-    public class ItalianGuidMessage : IItalianGuidMessage
-    {
-        private readonly IGuidGenerator guidGenerator;
-
-        public ItalianGuidMessage(IGuidGenerator guidGenerator)
-        {
-            this.guidGenerator = guidGenerator;
-        }
-        public string GetGuidMessage() => $"Un messaggio con id {guidGenerator.GetGuid()}";
-    }
-
-
-    public class EnglishGuidMessage : IEnglishGuidMessage
-    {
-        private readonly IGuidGenerator guidGenerator;
-
-        public EnglishGuidMessage(IGuidGenerator guidGenerator)
-        {
-            this.guidGenerator = guidGenerator;
-        }
-        public string GetGuidMessage() => $"A message with id {guidGenerator.GetGuid()}";
-    }
 }

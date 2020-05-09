@@ -21,9 +21,10 @@ namespace DependencyInjectionScopes
         {
             services.AddControllers();
 
-            services.AddScoped<IGuidGenerator, GuidGenerator>();
+            services.AddSingleton<IGuidGenerator, GuidGenerator>();
             services.AddTransient<IItalianGuidMessage, ItalianGuidMessage>();
             services.AddTransient<IEnglishGuidMessage, EnglishGuidMessage>();
+            services.AddTransient(_ => services);
 
         }
 

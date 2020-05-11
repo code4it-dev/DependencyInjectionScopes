@@ -3,7 +3,7 @@
 
     public interface IEnglishGuidMessage
     {
-        string GetGuidMessage();
+        string GetGuidEnglishMessage();
     }
 
     public class EnglishGuidMessage : IEnglishGuidMessage
@@ -14,6 +14,6 @@
         {
             this.guidGenerator = guidGenerator;
         }
-        public string GetGuidMessage() => $"{guidGenerator.GetGuid()} - English";
+        public string GetGuidEnglishMessage() => $"{guidGenerator.GetGuid()} - English";
     }
 }

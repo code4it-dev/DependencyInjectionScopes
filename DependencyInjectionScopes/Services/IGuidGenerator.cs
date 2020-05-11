@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace DependencyInjectionScopes.Services
 {
@@ -14,6 +15,7 @@ namespace DependencyInjectionScopes.Services
         public GuidGenerator()
         {
             _guid = Guid.NewGuid();
+            Debug.WriteLine($"Calling getGuid: {_guid}");
         }
 
         public Guid GetGuid()
